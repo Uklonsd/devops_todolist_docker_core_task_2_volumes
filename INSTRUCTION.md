@@ -4,12 +4,13 @@
 
 1. **Зібрати Docker-образ MySQL**:
    ```sh
-   docker build . -f Dockerfile.mysql mysql-local:1.0.0 
+   docker build -t mysql-local:1.0.0 -f Dockerfile.mysql .
+ 
    ```
 
 2. **Запустити контейнер MySQL**:
    ```sh
-   docker run -d -p 3036:3036 --name mysql-local -v my_sql:/var/lib/mysql mysql-local:1.0.0
+   docker run -d -p 3306:3306 --name mysql-local -v my_sql:/var/lib/mysql mysql-local:1.0.0
    ```
 
 3. **Перевірити, чи контейнер працює**:
